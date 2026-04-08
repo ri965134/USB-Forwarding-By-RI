@@ -1,36 +1,44 @@
-# USB Forwarding By RI
+# USB Forwarding By RI - USB over IP Windows GUI Client
 
-A lightweight, powerful Windows graphical client to forward and manage USB devices over a network (TCP/IP). Built to work seamlessly with the USB/IP protocol, this tool allows you to connect remote USB devices (like biometric scanners, mobile devices, or storage drives) to your PC as if they were physically plugged in.
+A lightweight, powerful **Windows Graphical User Interface (GUI)** designed to manage and forward USB devices over a TCP/IP network. Built on top of the robust **USB/IP protocol**, this tool allows you to seamlessly share and connect remote USB hardware to your Windows PC as if it were physically plugged into your local machine.
 
-## ✨ Features
-* **Automated Setup:** Silently installs required Kernel-level drivers, root certificates, and virtual USB hub hardware on the first run.
-* **Network Scanner:** Instantly ping and scan a target IP address to list all available exportable USB devices.
-* **Multi-Device Management:** Attach and detach multiple USB devices simultaneously with precise Virtual Port tracking.
-* **Smart Diagnostics:** Built-in network health checks and human-readable error handling.
-* **Dynamic UI:** Clean, responsive DataGrid interface that automatically adapts to Windows Light/Dark mode.
+Whether you are forwarding Android devices for development, sharing storage drives over a LAN, or remotely accessing biometric scanners for CSP operations, **USB Forwarding By RI** completely automates the complex backend networking and driver installations.
 
-## 🚀 Installation & Usage
+## 🚀 Key Features & Capabilities
 
-**Important:** Ensure that `USB Forwarding By RI.exe`, `usbip.exe`, and the `Driver` folder are all kept together in the same directory.
+* **Automated USB/IP Driver Setup:** Silently installs the required Windows Kernel-level drivers (`usbip_vhci_ude.inf`), root security certificates, and virtual USB hub hardware on the very first run.
+* **Smart Network Scanner:** Automatically pings your target IP address and retrieves a clean, readable list of all exportable USB devices currently attached to the remote host.
+* **Multi-Device Virtualization:** Select, attach, and detach multiple USB devices simultaneously. The app intelligently tracks independent Virtual Windows Ports (0-15) for conflict-free management.
+* **Pre-Flight Network Diagnostics:** Built-in latency and routing checks ensure the host IP is reachable before attempting a connection, providing human-readable troubleshooting steps if the network fails.
+* **Dynamic Theme Engine:** A responsive, data-grid UI that automatically adapts to your system's Windows 10/11 Light or Dark mode registry settings.
 
-1. Double-click **`USB Forwarding By RI.exe`** to initiate the setup. The software will automatically install the necessary drivers and create a desktop shortcut.
-2. Launch the application from the new desktop shortcut.
-3. Enter the **Phone IP** (or host server IP) and the Port (default is 3240).
-4. Click **Scan Network** to discover available USB devices.
-5. Check the box next to the desired device(s) and click **Attach Selected**.
+## 🎯 Common Use Cases
 
-## 🛠️ Troubleshooting
+* **Android USB Forwarding:** Access Android phones connected to remote servers for ADB debugging or file transfers.
+* **Remote Biometric Scanners:** Ideal for network operators and Customer Service Points (CSP) needing to share fingerprint or iris scanners over a local network.
+* **Wireless Hardware Access:** Share printers, webcams, or flash drives across your home or office Wi-Fi without moving cables.
 
-If you experience connection problems or the devices fail to attach, verify that the virtual USB driver was installed correctly by Windows:
+## ⚙️ Installation & Usage Guide
+
+**Important:** For the automated installer to work, `USB Forwarding By RI.exe`, `usbip.exe`, and the `Driver` folder must remain together in the exact same directory.
+
+1. **Run the Executable:** Double-click `USB Forwarding By RI.exe`. The software will request Administrator privileges once to silently install the virtual hardware and place a standard shortcut on your desktop.
+2. **Launch the App:** Open the program using the newly created desktop shortcut.
+3. **Connect to Host:** Enter the **Target IP Address** (e.g., your phone or server IP) and the TCP Port (default: 3240).
+4. **Scan & Attach:** Click **Scan Network** to discover connected USB devices. Tick the checkboxes next to the desired hardware and click **Attach Selected**.
+
+## 🛠️ Troubleshooting & Driver Issues
+
+If devices fail to attach or the connection is actively refused, verify that the virtual USB driver was successfully initialized by Windows:
 
 1. Open Windows **Device Manager**.
 2. Scroll down and expand the **Universal Serial Bus controllers** section.
 3. Look for the **`usbip-win VHCI(ude)`** driver.
-4. **If the driver is missing:** Delete the desktop shortcut and run `USB Forwarding By RI.exe` from your main folder again to force a clean reinstallation.
+4. **Fix:** If this driver is missing or showing an error triangle, delete your desktop shortcut and run the main `.exe` file from your downloaded folder again to force a clean reinstallation.
 
-## 📞 Contact & Support
+## 🤝 Support & Contact
 
-**Developer:** Rahil Islam  
-**Email:** RI965134@GMAIL.COM  
+**Developed by:** Rahil Islam  
+**Technical Support:** RI965134@GMAIL.COM  
 
-For bug reports, technical help, or feature requests, please reach out via email or open an issue in this repository.
+If you encounter bugs, need help with network configurations, or want to suggest new features, please reach out via email or open an Issue in this GitHub repository.
